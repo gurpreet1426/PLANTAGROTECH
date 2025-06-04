@@ -6,6 +6,9 @@ app.get('/api/get', (req,res)=>{
 app.get('/api/get/user', (req,res)=>{
     res.send({name:'Dev', email:"gurpreet", 'role':'admin'})
 })
-app.listen(9000,(req,res)=>{
-    console.log('server running on port 9000')
-})
+const router = require('./app/routes/router');
+app.use('/', router);
+const PORT = process.env.PORT || 9000;
+app.listen(PORT, () => {
+  console.log(`Server is running on port ${PORT}.`);
+});
