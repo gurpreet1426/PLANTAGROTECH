@@ -9,9 +9,9 @@ app.use(cors(corsOptions));
 app.use(express.json());
 // parse requests of content-type - application/x-www-form-urlencoded
 
-const databaseSync= require("./config/databasesync");
-databaseSync.authusersdb();
-databaseSync.productDL();
+//const databaseSync= require("./config/databasesync");
+//databaseSync.authusersdb();
+//databaseSync.productDL();
 
 // // drop the table if it already exists
 // db.sequelize.sync({ force: true }).then(() => {
