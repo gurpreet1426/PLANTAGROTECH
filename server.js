@@ -5,7 +5,7 @@ app.use(express.json());
 
 
 // simple route
-app.get("/", (req, res) => {
+app.get("/welcome", (req, res) => {
   res.json({ message: "Welcome to Plant Agro tech application." });
 });
 // const router = require('./app/routes/router');
