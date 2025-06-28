@@ -6,7 +6,7 @@ const router = express.Router();
 //router.post("/", products.create);
 
 // Retrieve all Products
-//router.get("/", products.findAll);
+router.get("/", products.findAll);
 
 router.get("/dummy", products.dummy);
 
