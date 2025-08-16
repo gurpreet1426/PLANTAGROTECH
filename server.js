@@ -1,5 +1,6 @@
 const express = require("express");
 const app = express();
+ app.use(express.json());
 //const sequelize = require('../PLANTAGROTECH/index');
 // simple route
 // app.get('/api/get', async (req, res) => {
