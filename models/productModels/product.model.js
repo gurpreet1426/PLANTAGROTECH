@@ -14,6 +14,11 @@ module.exports = (sequelize, Sequelize) => {
       type: Sequelize.CHAR,
       allowNull: false
     },
+     skuid: {
+      type: Sequelize.CHAR,      
+      //defaultValue: Sequelize.UUIDV4,
+      allowNull: false  
+    },
     shortdescription: {
       type: Sequelize.TEXT,
       defaultValue: ''
@@ -23,6 +28,11 @@ module.exports = (sequelize, Sequelize) => {
       defaultValue: ''
     },
     price: {
+      type: Sequelize.INTEGER,
+      allowNull: false,
+      defaultValue: 0,
+    },
+    mrp: {
       type: Sequelize.INTEGER,
       allowNull: false,
       defaultValue: 0,
@@ -67,6 +77,5 @@ module.exports = (sequelize, Sequelize) => {
   defaultValue: Sequelize.fn('now')
     }
   });
-
   return Product;
 };
