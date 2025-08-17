@@ -1,31 +1,37 @@
 module.exports = (sequelize, Sequelize) => {
-  const ProductTag = sequelize.define("producttag", {
-    ptagid: {
+  const InvoiceDetails = sequelize.define("invoicedetails", {
+    invoiceid: {
       type: Sequelize.UUID,
       primaryKey: true,
       defaultValue: Sequelize.UUIDV4,
       allowNull: false     
     },
-    pid: {
+    orderid: {
       type: Sequelize.UUID,
-      //foreign: true,
-      //defaultValue: Sequelize.UUIDV4,
+      //primaryKey: true,
+      defaultValue: Sequelize.UUIDV4,
       allowNull: false     
+    },    
+   productdetail: {
+      type: Sequelize.JSON,
+      defaultValue: {}
     },
-     tagid: {
-      type: Sequelize.UUID,
-      //foreign: true,
-      //defaultValue: Sequelize.UUIDV4,
-      allowNull: false     
-    },
-    ptagstatus: {
-      type: Sequelize.CHAR,
-      defaultValue: 'Inactive'
-    },     
+    billingaddress: {
+      type: Sequelize.JSON,
+      defaultValue: {}
+    }, 
+    coupondetail: {
+      type: Sequelize.JSON,
+      defaultValue: {}
+    }, 
+    ordertotalamount: {
+      type: Sequelize.JSON,
+      defaultValue: {}
+    },           
     authorid: {
       type: Sequelize.UUID,
       defaultValue: Sequelize.UUIDV4
-    },    
+    }, 
     createdat: {
       allowNull: false,
   type: Sequelize.DATE,
@@ -37,6 +43,5 @@ module.exports = (sequelize, Sequelize) => {
   defaultValue: Sequelize.fn('now')
     }
   });
-
-  return ProductTag;
+  return InvoiceDetails;
 };

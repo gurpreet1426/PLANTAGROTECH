@@ -1,33 +1,39 @@
 module.exports = (sequelize, Sequelize) => {
-  const ProductImage = sequelize.define("productimage", {
-    pimgid: {
+  const Payment = sequelize.define("payment", {
+    paymentid: {
       type: Sequelize.UUID,
       primaryKey: true,
       defaultValue: Sequelize.UUIDV4,
       allowNull: false     
     },
-    pid: {
+    cartid: {
       type: Sequelize.UUID,
-      //foreign: true,
-      //defaultValue: Sequelize.UUIDV4,
+      //primaryKey: true,
+      defaultValue: Sequelize.UUIDV4,
       allowNull: false     
     },
-    pimgurl: {
+    transactionid: {
+      type: Sequelize.UUID,
+      //primaryKey: true,
+      defaultValue: Sequelize.UUIDV4,
+      allowNull: false     
+    },
+    paymenttype: {
       type: Sequelize.CHAR,
       allowNull: false
     },
-    pimgstatus: {
-      type: Sequelize.CHAR,
-      defaultValue: 'Inactive'
-    },   
-    pimgranking: {
-      type: Sequelize.INTEGER,
-      defaultValue: 0
-    },   
+   paymentgatewayresponse: {
+      type: Sequelize.JSON,
+      defaultValue: {}
+    },      
     authorid: {
       type: Sequelize.UUID,
       defaultValue: Sequelize.UUIDV4
-    },    
+    },   
+    paymentstatus: {
+      type: Sequelize.CHAR,
+      defaultValue: 'Inactive'
+    },
     createdat: {
       allowNull: false,
   type: Sequelize.DATE,
@@ -39,6 +45,5 @@ module.exports = (sequelize, Sequelize) => {
   defaultValue: Sequelize.fn('now')
     }
   });
-
-  return ProductImage;
+  return Payment;
 };

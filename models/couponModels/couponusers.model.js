@@ -1,23 +1,25 @@
 module.exports = (sequelize, Sequelize) => {
-  const ProductSize = sequelize.define("productsize", {
-    psizeid: {
+  const CouponUsers = sequelize.define("couponusers", {
+    couponuserid: {
       type: Sequelize.UUID,
       primaryKey: true,
       defaultValue: Sequelize.UUIDV4,
       allowNull: false     
     },
-    psizename: {
-      type: Sequelize.CHAR,
-      allowNull: false
-    },    
-   psizestatus: {
-      type: Sequelize.CHAR,
-      defaultValue: 'Inactive'
-    },       
+    couponid: {
+      type: Sequelize.UUID,      
+      defaultValue: Sequelize.UUIDV4,
+      allowNull: false     
+    },   
+    userlimitcount: {
+      type: Sequelize.INTEGER,      
+      //defaultValue: Sequelize.UUIDV4,
+      //allowNull: false  
+    },        
     authorid: {
       type: Sequelize.UUID,
       defaultValue: Sequelize.UUIDV4
-    },    
+    },
     createdat: {
       allowNull: false,
   type: Sequelize.DATE,
@@ -29,6 +31,5 @@ module.exports = (sequelize, Sequelize) => {
   defaultValue: Sequelize.fn('now')
     }
   });
-
-  return ProductSize;
+  return CouponUsers;
 };

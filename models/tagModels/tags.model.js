@@ -1,5 +1,5 @@
 module.exports = (sequelize, Sequelize) => {
-  const Tag = sequelize.define("tag", {
+  const Tags = sequelize.define("tags", {
     tagid: {
       type: Sequelize.UUID,
       primaryKey: true,
@@ -30,5 +30,5 @@ module.exports = (sequelize, Sequelize) => {
     }
   });
 
-  return Tag;
+  return Tags;
 };

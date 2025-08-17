@@ -1,5 +1,5 @@
 module.exports = (sequelize, Sequelize) => {
-  const Product = sequelize.define("product", {
+  const Products = sequelize.define("products", {
     pid: {
       type: Sequelize.UUID,
       primaryKey: true,
@@ -77,5 +77,5 @@ module.exports = (sequelize, Sequelize) => {
   defaultValue: Sequelize.fn('now')
     }
   });
-  return Product;
+  return Products;
 };
