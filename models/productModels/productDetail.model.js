@@ -13,8 +13,8 @@ module.exports = (sequelize, Sequelize) => {
       allowNull: false     
     },
     producvediourl: {
-      type: Sequelize.CHAR,
-      allowNull: false
+      type: Sequelize.JSON,
+      defaultValue: {}
     },
     plantinstructions: {
       type: Sequelize.TEXT,

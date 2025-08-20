@@ -76,7 +76,7 @@ exports.update = (req, res) => {
   const id = req.params.id;
 
   Product.update(req.body, {
-    where: { id: id }
+    where: { pid: id }
   })
     .then(num => {
       if (num == 1) {
