@@ -68,5 +68,5 @@ module.exports = (sequelize, Sequelize) => {
   defaultValue: Sequelize.fn('now')
     }
   });
-  return Product;
+  return DeliveryAddress;
 };

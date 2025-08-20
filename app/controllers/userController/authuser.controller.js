@@ -1,4 +1,4 @@
-  const authuser = require("../../../services/authuserService/authuserservice");  
+  const authuser = require("../../../services/authuserService/authUser.service");  
   const express= require ('express');
   const router = express.Router();
 

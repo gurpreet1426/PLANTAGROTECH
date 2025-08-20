@@ -1,7 +1,28 @@
 const authUserController = require("../controllers/userController/authuser.controller");
 const productController= require("../controllers/productController/product.controller");
+const cartController= require("../controllers/cartController/cart.controller");
+const cartDetailsController= require("../controllers/cartController/cartdetails.controller");
+const couponController= require("../controllers/couponController/coupons.controller");
+const couponUsersController= require("../controllers/couponController/couponusers.controller");
+const deliveryController= require("../controllers/deliveryController/deliveryaddress.controller");
+const invoiceController= require("../controllers/invoiceController/invoicedetails.controller");
+const orderController= require("../controllers/orderController/orders.controller");
+const orderStatusController= require("../controllers/orderController/orderstatus.controller");
+const paymentController= require("../controllers/paymentController/payment.controller");
+const tagController= require("../controllers/tagController/tags.controller");
 const express = require('express');
 const router = express.Router();
 router.use('/api/authuser',authUserController);
 router.use('/api/product',productController);
+router.use('/api/cart',cartController);
+router.use('/api/cartdetails',cartDetailsController);
+router.use('/api/coupon',couponController);
+router.use('/api/couponusers',couponUsersController);
+router.use('/api/delivery',deliveryController);
+router.use('/api/invoice',invoiceController);
+router.use('/api/payment',paymentController);
+router.use('/api/order',orderController);
+router.use('/api/orderstatus',orderStatusController);
+router.use('/api/tag',tagController);
+
 module.exports = router;

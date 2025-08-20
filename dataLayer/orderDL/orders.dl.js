@@ -13,11 +13,11 @@ const sequelize = new Sequelize(dbConfig.DB, dbConfig.USER, dbConfig.PASSWORD, {
   }
 });
 
-const productdb = {};
+const ordersDb = {};
 
-productdb.Sequelize = Sequelize;
-productdb.sequelize = sequelize;
+ordersDb.Sequelize = Sequelize;
+ordersDb.sequelize = sequelize;
 
-productdb.products = require("../../models/productModels/product.model.js")(sequelize, Sequelize);
+ordersDb.orders = require("../../models/orderModels/orders.model.js")(sequelize, Sequelize);
 
-module.exports = productdb;
+module.exports = ordersDb;

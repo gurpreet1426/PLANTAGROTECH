@@ -1,5 +1,5 @@
 module.exports = (sequelize, Sequelize) => {
-    const Authusers = sequelize.define("authusers", {
+    const AuthUsers = sequelize.define("authusers", {
         userid: {
             type: Sequelize.UUID,
             primaryKey: true,
@@ -68,6 +68,6 @@ module.exports = (sequelize, Sequelize) => {
             type: Sequelize.DATE,
         }
     });  
-    return Authusers;
+    return AuthUsers;
   };
   

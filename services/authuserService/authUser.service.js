@@ -1,7 +1,7 @@
 const { DATE } = require("sequelize");
-const authuserdb = require("../../dataLayer/authuserDL/authuserdl");
-const Authuser = authuserdb.authusers;
-const Op = authuserdb.Sequelize.Op;
+const authUserDl = require("../../dataLayer/authUserDL/authUser.dl");
+const Authuser = authUserDl.authusers;
+const Op = authUserDl.Sequelize.Op;
 const bcrypt = require('bcrypt');
 const jwt = require('jsonwebtoken');
 require('dotenv').config();

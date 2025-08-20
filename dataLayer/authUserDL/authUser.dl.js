@@ -13,11 +13,11 @@ const sequelize = new Sequelize(dbConfig.DB, dbConfig.USER, dbConfig.PASSWORD, {
   }
 });
 
-const authusersdb = {};
+const authUsersDb = {};
 
-authusersdb.Sequelize = Sequelize;
-authusersdb.sequelize = sequelize;
+authUsersDb.Sequelize = Sequelize;
+authUsersDb.sequelize = sequelize;
 
-authusersdb.authusers = require("../../models/authuserModels/authuser.model.js")(sequelize, Sequelize);
+authUsersDb.authUsers = require("../../models/authuserModels/authUsers.model.js")(sequelize, Sequelize);
 
-module.exports = authusersdb;
+module.exports = authUsersDb;
