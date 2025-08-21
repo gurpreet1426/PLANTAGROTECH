@@ -1,5 +1,8 @@
 const authUserController = require("../controllers/userController/authuser.controller");
 const productController= require("../controllers/productController/product.controller");
+const productDetailController= require("../controllers/productController/productDetail.controller");
+const productSizesController= require("../controllers/productController/productSizes.controller");
+const productTagsController= require("../controllers/productController/productTags.controller");
 const cartController= require("../controllers/cartController/cart.controller");
 const cartDetailsController= require("../controllers/cartController/cartdetails.controller");
 const couponController= require("../controllers/couponController/coupons.controller");
@@ -14,6 +17,9 @@ const express = require('express');
 const router = express.Router();
 router.use('/api/authuser',authUserController);
 router.use('/api/product',productController);
+router.use('/api/productdetail',productDetailController);
+router.use('/api/productsizes',productSizesController);
+router.use('/api/producttags',productTagsController);
 router.use('/api/cart',cartController);
 router.use('/api/cartdetails',cartDetailsController);
 router.use('/api/coupon',couponController);

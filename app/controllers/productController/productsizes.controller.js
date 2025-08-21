@@ -1,28 +1,17 @@
-const products = require("../../../services/productService/product.service");
+const productSizesService = require("../../../services/productService/productSizes.service");
 const express= require ('express');
 const router = express.Router();
 
-// Create a new Product
-router.post("/", products.create);
+// Create a new Product Sizes
+router.post("/", productSizesService.create);
 
-// Retrieve all Products
-router.get("/", products.findAll);
+// Retrieve all Product Sizes
+router.get("/", productSizesService.findAll);
 
-router.get("/dummy", products.dummy);
+// Retrieve a single Product Sizes with id
+router.get("/:id", productSizesService.findOne);
 
-// Retrieve all published Products
-router.get("/published", products.findAllPublished);
-
-// Retrieve a single Product with id
-router.get("/:id", products.findOne);
-
-// Update a Product with id
-router.put("/:id", products.update);
-
-// Delete a Product with id
-//router.delete("/:id", products.delete);
-
-// Delete all Products
-//router.delete("/", products.deleteAll);
+// Update a Product Sizes with id
+router.put("/:id", productSizesService.update);
 
 module.exports = router;

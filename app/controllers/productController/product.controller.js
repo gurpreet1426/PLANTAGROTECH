@@ -10,8 +10,8 @@ router.get("/", productsService.findAll);
 
 router.get("/dummy", productsService.dummy);
 
-// Retrieve all published Products
-router.get("/published", productsService.findAllPublished);
+// Retrieve all active Products
+router.get("/activeproducts", productsService.findAllActive);
 
 // Retrieve a single Product with id
 router.get("/:id", productsService.findOne);

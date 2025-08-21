@@ -1,5 +1,6 @@
 const { DATE } = require("sequelize");
 const productDl = require("../../dataLayer/productDL/product.dl");
+const commonService= require("./common.service");
 const Product = productDl.products;
 const Op = productDl.Sequelize.Op;
 
@@ -18,8 +19,8 @@ exports.create = (req, res) => {
     name: req.body.name,
     slug: req.body.slug,
     price: req.body.price,
-    qty: req.body.qty
-
+    qty: req.body.qty,
+    skuid:commonService.generateSKU(req.body.name,)
   };
 
   // Save Product in the database
@@ -138,9 +139,9 @@ exports.deleteAll = (req, res) => {
     });
 };
 
-// find all published Product
-exports.findAllPublished = (req, res) => {
-  Product.findAll({ where: { published: true } })
+// find all active Product
+exports.findAllActive = (req, res) => {
+  Product.findAll({ where: { status: 'Active' } })
     .then(data => {
       res.send(data);
     })
