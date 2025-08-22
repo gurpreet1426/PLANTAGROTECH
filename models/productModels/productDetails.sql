@@ -1,8 +1,8 @@
--- Table: public.productdetail
+-- Table: public.productdetails
 
--- DROP TABLE IF EXISTS public.productdetail;
+--DROP TABLE IF EXISTS public.productdetails;
 
-CREATE TABLE IF NOT EXISTS public.productdetail
+CREATE TABLE IF NOT EXISTS public.productdetails
 (
     pdid uuid NOT NULL,
 	pid character(255) COLLATE pg_catalog."default" NOT NULL,
@@ -11,11 +11,11 @@ CREATE TABLE IF NOT EXISTS public.productdetail
 	organizationid uuid,
 	authorid uuid,
     "createdAt" timestamp with time zone NOT NULL,
-    "updatedAt" timestamp with time zone NOT NULL,
+    "updatedAt" timestamp with time zone NOT NULL,	
     CONSTRAINT productdetail_pkey PRIMARY KEY (pdid)
 )
 
 TABLESPACE pg_default;
 
-ALTER TABLE IF EXISTS public.productdetail
+ALTER TABLE IF EXISTS public.productdetails
     OWNER to postgres;

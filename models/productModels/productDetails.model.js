@@ -1,5 +1,5 @@
 module.exports = (sequelize, Sequelize) => {
-  const ProductDetail = sequelize.define("productdetail", {
+  const ProductDetails = sequelize.define("productdetails", {
     pdid: {
       type: Sequelize.UUID,
       primaryKey: true,
@@ -27,18 +27,9 @@ module.exports = (sequelize, Sequelize) => {
     authorid: {
       type: Sequelize.UUID,
       defaultValue: Sequelize.UUIDV4
-    },    
-    createdat: {
-      allowNull: false,
-  type: Sequelize.DATE,
-  defaultValue: Sequelize.fn('now')
-    },
-    updatedat: {
-      allowNull: false,
-  type: Sequelize.DATE,
-  defaultValue: Sequelize.fn('now')
-    }
+    },   
+    
   });
 
-  return ProductDetail;
+  return ProductDetails;
 };

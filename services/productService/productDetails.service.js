@@ -1,6 +1,6 @@
 const { DATE } = require("sequelize");
-const productDetailDl = require("../../dataLayer/productDL/productDetail.dl");
-const ProductDetail = productDetailDl.productDetail;
+const productDetailDl = require("../../dataLayer/productDL/productDetails.dl");
+const ProductDetails = productDetailDl.productdetails;
 const Op = productDetailDl.Sequelize.Op;
 
 // Create and Save a new Product detail
@@ -14,7 +14,7 @@ exports.create = (req, res) => {
   }  
 
   // Save Product details in the database
-  ProductDetail.create(req?.body)
+  ProductDetails.create(req?.body)
     .then(data => {
       res.send(data);
     })
@@ -31,7 +31,7 @@ exports.findAll = (req, res) => {
   const title = req.query.title;
   var condition = title ? { title: { [Op.iLike]: `%${title}%` } } : null;
 
-  ProductDetail.findAll({ where: condition })
+  ProductDetails.findAll({ where: condition })
     .then(data => {
       res.send(data);
     })
@@ -47,7 +47,7 @@ exports.findAll = (req, res) => {
 exports.findOne = (req, res) => {
   const pdid = req.params.id;
 
-  ProductDetail.findByPk(pdid)
+  ProductDetails.findByPk(pdid)
     .then(data => {
       res.send(data);
     })
@@ -62,7 +62,7 @@ exports.findOne = (req, res) => {
 exports.update = (req, res) => {
   const pdid = req.params.id;
 
-  ProductDetail.update(req.body, {
+  ProductDetails.update(req.body, {
     where: { pdid: pdid }
   })
     .then(num => {

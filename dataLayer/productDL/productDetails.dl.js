@@ -18,6 +18,6 @@ const productDetailDb = {};
 productDetailDb.Sequelize = Sequelize;
 productDetailDb.sequelize = sequelize;
 
-productDetailDb.productDetail = require("../../models/productModels/productDetail.model.js")(sequelize, Sequelize);
+productDetailDb.productdetails = require("../../models/productModels/productDetails.model.js")(sequelize, Sequelize);
 
 module.exports = productDetailDb;
