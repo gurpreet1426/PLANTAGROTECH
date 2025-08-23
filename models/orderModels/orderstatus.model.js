@@ -1,12 +1,12 @@
 module.exports = (sequelize, Sequelize) => {
-  const OrderStatus = sequelize.define("orderstatus", {
+  const OrderStatus = sequelize.define("orderstatuses", {
     orderstatusid: {
       type: Sequelize.UUID,
       primaryKey: true,
       defaultValue: Sequelize.UUIDV4,
       allowNull: false     
     },
-    orderStatusstatusname: {
+    orderstatusstatusname: {
       type: Sequelize.CHAR,      
       defaultValue: 'InProgress',
       allowNull: false     
@@ -19,16 +19,6 @@ module.exports = (sequelize, Sequelize) => {
     authorid: {
       type: Sequelize.UUID,
       defaultValue: Sequelize.UUIDV4
-    },       
-    createdat: {
-      allowNull: false,
-  type: Sequelize.DATE,
-  defaultValue: Sequelize.fn('now')
-    },
-    updatedat: {
-      allowNull: false,
-  type: Sequelize.DATE,
-  defaultValue: Sequelize.fn('now')
     }
   });
   return OrderStatus;

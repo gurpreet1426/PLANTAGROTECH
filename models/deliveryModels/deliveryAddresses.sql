@@ -1,8 +1,8 @@
--- Table: public.deliveryaddress
+-- Table: public.deliveryaddresses
 
--- DROP TABLE IF EXISTS public.deliveryaddress;
+-- DROP TABLE IF EXISTS public.deliveryaddresses;
 
-CREATE TABLE IF NOT EXISTS public.deliveryaddress
+CREATE TABLE IF NOT EXISTS public.deliveryaddresses
 (
     deliveryaddressid uuid NOT NULL,
 	name character(255) COLLATE pg_catalog."default" NOT NULL,
@@ -23,5 +23,5 @@ CREATE TABLE IF NOT EXISTS public.deliveryaddress
 
 TABLESPACE pg_default;
 
-ALTER TABLE IF EXISTS public.deliveryaddress
+ALTER TABLE IF EXISTS public.deliveryaddresses
     OWNER to postgres;

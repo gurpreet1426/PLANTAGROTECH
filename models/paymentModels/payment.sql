@@ -1,8 +1,8 @@
--- Table: public.payment
+-- Table: public.payments
 
--- DROP TABLE IF EXISTS public.payment;
+-- DROP TABLE IF EXISTS public.payments;
 
-CREATE TABLE IF NOT EXISTS public.payment
+CREATE TABLE IF NOT EXISTS public.payments
 (
     paymentid uuid NOT NULL,
 	cartid uuid,
@@ -18,5 +18,5 @@ CREATE TABLE IF NOT EXISTS public.payment
 
 TABLESPACE pg_default;
 
-ALTER TABLE IF EXISTS public.payment
+ALTER TABLE IF EXISTS public.payments
     OWNER to postgres;

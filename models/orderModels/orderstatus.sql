@@ -1,11 +1,11 @@
--- Table: public.orderstatus
+-- Table: public.orderstatuses
 
--- DROP TABLE IF EXISTS public.orderstatus;
+-- DROP TABLE IF EXISTS public.orderstatuses;
 
-CREATE TABLE IF NOT EXISTS public.orderstatus
+CREATE TABLE IF NOT EXISTS public.orderstatuses
 (
     orderstatusid uuid NOT NULL,
-	orderStatusstatusname character(255) COLLATE pg_catalog."default" NOT NULL,	
+	orderstatusstatusname character(255) COLLATE pg_catalog."default" NOT NULL,	
 	orderstatus character(255) COLLATE pg_catalog."default" NOT NULL,	
 	authorid uuid,	
     "createdAt" timestamp with time zone NOT NULL,
@@ -15,5 +15,5 @@ CREATE TABLE IF NOT EXISTS public.orderstatus
 
 TABLESPACE pg_default;
 
-ALTER TABLE IF EXISTS public.orderstatus
+ALTER TABLE IF EXISTS public.orderstatuses
     OWNER to postgres;

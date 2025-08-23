@@ -27,16 +27,6 @@ module.exports = (sequelize, Sequelize) => {
     authorid: {
       type: Sequelize.UUID,
       defaultValue: Sequelize.UUIDV4
-    },    
-    createdat: {
-      allowNull: false,
-  type: Sequelize.DATE,
-  defaultValue: Sequelize.fn('now')
-    },
-    updatedat: {
-      allowNull: false,
-  type: Sequelize.DATE,
-  defaultValue: Sequelize.fn('now')
     }
   });
 

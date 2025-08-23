@@ -10,7 +10,7 @@ module.exports = (sequelize, Sequelize) => {
       type: Sequelize.CHAR,
       allowNull: false
     },
-    couponType: {
+    coupontype: {
       type: Sequelize.CHAR,
       allowNull: false
     },
@@ -41,16 +41,6 @@ module.exports = (sequelize, Sequelize) => {
     couponstatus: {
       type: Sequelize.CHAR,
       defaultValue: 'Inactive'
-    },
-    createdat: {
-      allowNull: false,
-  type: Sequelize.DATE,
-  defaultValue: Sequelize.fn('now')
-    },
-    updatedat: {
-      allowNull: false,
-  type: Sequelize.DATE,
-  defaultValue: Sequelize.fn('now')
     }
   });
   return Coupons;

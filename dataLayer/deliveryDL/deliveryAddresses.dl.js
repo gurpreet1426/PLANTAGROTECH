@@ -18,6 +18,6 @@ const deliveryAddressDb = {};
 deliveryAddressDb.Sequelize = Sequelize;
 deliveryAddressDb.sequelize = sequelize;
 
-deliveryAddressDb.deliveryAddress = require("../../models/deliveryModels/deliveryAddress.model.js")(sequelize, Sequelize);
+deliveryAddressDb.deliveryAddresses = require("../../models/deliveryModels/deliveryAddresses.model.js")(sequelize, Sequelize);
 
 module.exports = deliveryAddressDb;

@@ -6,7 +6,7 @@ CREATE TABLE IF NOT EXISTS public.coupons
 (
     couponid uuid NOT NULL,
 	couponname character(255) COLLATE pg_catalog."default" NOT NULL,
-	couponType character(255) COLLATE pg_catalog."default" NOT NULL,
+	coupontype character(255) COLLATE pg_catalog."default" NOT NULL,
 	maxdiscount integer NOT NULL DEFAULT 0,
 	couponcode character(255) COLLATE pg_catalog."default" NOT NULL,
 	usermaxlimit integer NOT NULL DEFAULT 0,

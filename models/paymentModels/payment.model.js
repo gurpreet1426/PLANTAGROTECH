@@ -1,5 +1,5 @@
 module.exports = (sequelize, Sequelize) => {
-  const Payment = sequelize.define("payment", {
+  const Payment = sequelize.define("payments", {
     paymentid: {
       type: Sequelize.UUID,
       primaryKey: true,
@@ -33,16 +33,6 @@ module.exports = (sequelize, Sequelize) => {
     paymentstatus: {
       type: Sequelize.CHAR,
       defaultValue: 'Inactive'
-    },
-    createdat: {
-      allowNull: false,
-  type: Sequelize.DATE,
-  defaultValue: Sequelize.fn('now')
-    },
-    updatedat: {
-      allowNull: false,
-  type: Sequelize.DATE,
-  defaultValue: Sequelize.fn('now')
     }
   });
   return Payment;

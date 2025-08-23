@@ -1,6 +1,6 @@
 const { DATE } = require("sequelize");
 const cartDetailsDl = require("../../dataLayer/cartDL/cartDetails.dl");
-const CartDetails = cartDetailsDl;
+const CartDetails = cartDetailsDl.cartDetails;
 const Op = cartDetailsDl.Sequelize.Op;
 const bcrypt = require('bcrypt');
 const jwt = require('jsonwebtoken');

@@ -65,16 +65,6 @@ module.exports = (sequelize, Sequelize) => {
     status: {
       type: Sequelize.CHAR,
       defaultValue: 'Inactive'
-    },
-    createdat: {
-      allowNull: false,
-  type: Sequelize.DATE,
-  defaultValue: Sequelize.fn('now')
-    },
-    updatedat: {
-      allowNull: false,
-  type: Sequelize.DATE,
-  defaultValue: Sequelize.fn('now')
     }
   });
   return Products;

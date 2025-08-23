@@ -1,5 +1,5 @@
 module.exports = (sequelize, Sequelize) => {
-  const DeliveryAddress = sequelize.define("deliveryaddress", {
+  const Deliveryaddresses = sequelize.define("deliveryaddresses", {
     deliveryaddressid: {
       type: Sequelize.UUID,
       primaryKey: true,
@@ -56,17 +56,7 @@ module.exports = (sequelize, Sequelize) => {
     deliveryaddressstatus: {
       type: Sequelize.CHAR,
       defaultValue: 'Inactive'
-    },
-    createdat: {
-      allowNull: false,
-  type: Sequelize.DATE,
-  defaultValue: Sequelize.fn('now')
-    },
-    updatedat: {
-      allowNull: false,
-  type: Sequelize.DATE,
-  defaultValue: Sequelize.fn('now')
     }
   });
-  return DeliveryAddress;
+  return Deliveryaddresses;
 };

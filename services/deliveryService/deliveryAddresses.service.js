@@ -1,7 +1,7 @@
 const { DATE } = require("sequelize");
-const deliveryAddressDl = require("../../dataLayer/deliveryDL/deliveryAddress.dl");
-const DeliveryAddress = deliveryAddressDl.deliveryAddress;
-const Op = deliveryAddressDl.Sequelize.Op;
+const deliveryAddressesDl = require("../../dataLayer/deliveryDL/deliveryAddresses.dl");
+const DeliveryAddresses = deliveryAddressesDl.deliveryAddresses;
+const Op = deliveryAddressesDl.Sequelize.Op;
 const bcrypt = require('bcrypt');
 const jwt = require('jsonwebtoken');
 require('dotenv').config();
@@ -15,7 +15,7 @@ exports.create = async (req, res) => {
   }  
   
   // Save delivery address in the database
-  DeliveryAddress.create(req.body)
+  DeliveryAddresses.create(req.body)
     .then(data => {      
       res.send(data);
     })
@@ -32,7 +32,7 @@ exports.findAll = (req, res) => {
   const title = req.query.title;
   var condition = title ? { title: { [Op.iLike]: `%${title}%` } } : null;
 
-  DeliveryAddress.findAll({ where: condition })
+  DeliveryAddresses.findAll({ where: condition })
     .then(data => {
       res.send(data);
     })
@@ -48,7 +48,7 @@ exports.findAll = (req, res) => {
 exports.findOne = (req, res) => {
   const deliveryaddressid = req.params.id;
 
-  DeliveryAddress.findByPk(deliveryaddressid)
+  DeliveryAddresses.findByPk(deliveryaddressid)
     .then(data => {
       res.send(data);
     })
@@ -63,7 +63,7 @@ exports.findOne = (req, res) => {
 exports.update = (req, res) => {
   const deliveryaddressid = req.params.id;
 
-  DeliveryAddress.update(req.body, {
+  DeliveryAddresses.update(req.body, {
     where: { deliveryaddressid: deliveryaddressid }
   })
     .then(num => {
