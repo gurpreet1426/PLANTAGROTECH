@@ -7,10 +7,10 @@ const jwt = require('jsonwebtoken');
 require('dotenv').config();
 // Create and Save a payment
 exports.create = async (req, res) => {
-  const {authorid}= req?.body;
-   if (!authorid || authorid.length == 0) {
+  const {cartid}= req?.body;
+   if (!cartid || cartid.length == 0) {
     res.status(400).send({
-      message: "Authorid is invalid"
+      message: "Cartid is invalid"
     });
   }  
   

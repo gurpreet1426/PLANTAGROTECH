@@ -7,11 +7,11 @@ const jwt = require('jsonwebtoken');
 require('dotenv').config();
 // Create and Save a cart
 exports.create = async (req, res) => {
-  const {authorid,couponid,deliveryaddressid}= req?.body; 
+  const {couponid,deliveryaddressid}= req?.body; 
 
-  if (!authorid || authorid.length == 0) {
+  if (!couponid || couponid.length == 0) {
     res.status(400).send({
-      message: "Authorid is invalid"
+      message: "Couponid is invalid"
     });
   }  
   if (!deliveryaddressid || deliveryaddressid.length == 0) {
@@ -20,16 +20,8 @@ exports.create = async (req, res) => {
     });   
   }
   
-  // Create a Cart
-  const cart = {
-    couponid: couponid,
-    deliveryaddressid: deliveryaddressid,
-    cartstatus: cartstatus?cartstatus:"pending",
-    authorid:authorid
-  };
-
   // Save cart in the database
-  Cart.create(cart)
+  Cart.create(req.body)
     .then(data => {      
       res.send(data);
     })

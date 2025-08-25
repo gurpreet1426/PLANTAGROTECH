@@ -8,11 +8,11 @@ require('dotenv').config();
 // Create and Save a coupon user
 exports.create = async (req, res) => {
   //const {couponname,coupontype,maxdiscount,couponcode,usermaxlimit,percentagediscount,couponstatus,authorid}= req?.body;
-  const {authorid}= req?.body;
+  const {couponid}= req?.body;
   
-  if (!authorid || authorid.length == 0) {
+  if (!couponid || couponid.length == 0) {
     res.status(400).send({
-      message: "Authorid is invalid"
+      message: "Couponid is invalid"
     });
   }  
  

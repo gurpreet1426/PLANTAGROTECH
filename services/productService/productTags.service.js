@@ -6,36 +6,27 @@ const Op = productTagsDl.Sequelize.Op;
 // Create and Save a new Product tags
 exports.create = (req, res) => {
   // Validate request
-  if (!req.body.name) {
+  if (!req.body.pid) {
     res.status(400).send({
-      message: "Name can not be empty!"
+      message: "Pid can not be empty!"
     });
     return;
   }
 
-  // Create a Product
-  const productTags = {
-    name: req.body.name,
-    slug: req.body.slug,
-    price: req.body.price,
-    qty: req.body.qty
-
-  };
-
-  // Save Product in the database
-  ProductTags.create(product)
+   // Save Product tags in the database
+  ProductTags.create(req?.body)
     .then(data => {
       res.send(data);
     })
     .catch(err => {
       res.status(500).send({
         message:
-          err.message || "Some error occurred while creating the Product."
+          err.message || "Some error occurred while creating the Product tags."
       });
     });
 };
 
-// Retrieve all Products from the database.
+// Retrieve all Product tags from the database.
 exports.findAll = (req, res) => {
   const title = req.query.title;
   var condition = title ? { title: { [Op.iLike]: `%${title}%` } } : null;
@@ -47,7 +38,7 @@ exports.findAll = (req, res) => {
     .catch(err => {
       res.status(500).send({
         message:
-          err.message || "Some error occurred while retrieving products."
+          err.message || "Some error occurred while retrieving product tags."
       });
     });
 };
@@ -55,25 +46,25 @@ exports.findAll = (req, res) => {
 
 // Find a single Product with an id
 exports.findOne = (req, res) => {
-  const id = req.params.id;
+  const ptagid = req.params.id;
 
-  ProductTags.findByPk(id)
+  ProductTags.findByPk(ptagid)
     .then(data => {
       res.send(data);
     })
     .catch(err => {
       res.status(500).send({
-        message: "Error retrieving Product with id=" + id
+        message: "Error retrieving Product tags with ptagid=" + ptagid
       });
     });
 };
 
-// Update a Product by the id in the request
+// Update a Product tags by the ptagid in the request
 exports.update = (req, res) => {
-  const id = req.params.id;
+  const ptagid = req.params.id;
 
   ProductTags.update(req.body, {
-    where: { pid: id }
+    where: { ptagid: ptagid }
   })
     .then(num => {
       if (num == 1) {

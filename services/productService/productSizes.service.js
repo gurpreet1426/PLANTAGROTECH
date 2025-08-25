@@ -6,9 +6,9 @@ const Op = productSizesDl.Sequelize.Op;
 // Create and Save a new Product sizes
 exports.create = (req, res) => {
   // Validate request
-  if (!req?.body?.psizeid) {
+  if (!req?.body?.pid) {
     res.status(400).send({
-      message: "psizeid can not be empty!"
+      message: "pid can not be empty!"
     });
     return;
   }  
@@ -60,7 +60,7 @@ exports.findOne = (req, res) => {
 
 // Update a Product details by the psizeid in the request
 exports.update = (req, res) => {
-  const pdid = req.params.id;
+  const psizeid = req.params.id;
 
   ProductSizes.update(req.body, {
     where: { psizeid: psizeid }

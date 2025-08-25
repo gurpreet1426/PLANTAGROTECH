@@ -7,10 +7,10 @@ const jwt = require('jsonwebtoken');
 require('dotenv').config();
 // Create and Save a order status
 exports.create = async (req, res) => {
-  const {authorid}= req?.body;
-   if (!authorid || authorid.length == 0) {
+  const {orderstatusstatusname}= req?.body;
+   if (!orderstatusstatusname || orderstatusstatusname.length == 0) {
     res.status(400).send({
-      message: "Authorid is invalid"
+      message: "Order status statusname is invalid"
     });
   }  
   

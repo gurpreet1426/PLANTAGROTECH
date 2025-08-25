@@ -6,27 +6,15 @@ const bcrypt = require('bcrypt');
 const jwt = require('jsonwebtoken');
 require('dotenv').config();
 // Create and Save a coupon
-exports.create = async (req, res) => {
-  const {couponname,coupontype,maxdiscount,couponcode,usermaxlimit,percentagediscount,couponstatus,authorid}= req?.body;
-   if (!authorid || authorid.length == 0) {
+exports.create = async (req, res) => {  
+   if (!req.body.couponname || req.body.couponname.length == 0) {
     res.status(400).send({
-      message: "Authorid is invalid"
+      message: "couponname is invalid"
     });
   }  
-  // Create a Coupon
-  const coupon = {
-    couponname: couponname,
-    coupontype: coupontype,
-    maxdiscount: maxdiscount?cartstatus:"pending",
-    couponcode:couponcode,
-    usermaxlimit:usermaxlimit,
-    percentagediscount:percentagediscount,
-    couponstatus:couponstatus,
-    authorid:authorid
-  };
-
+  
   // Save coupon in the database
-  Coupons.create(coupon)
+  Coupons.create(req?.body)
     .then(data => {      
       res.send(data);
     })
